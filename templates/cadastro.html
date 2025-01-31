@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block conteudo %}
+<form action="{{url_for('cadastro_func')}}" class="pag" method="POST">
+    <span class="display-block">
+        <label for="nome_">Nome:</label>
+        <input id="nome_" type="text" name="nome">
+    </span>
+    <span class="display-block">
+        <label for="descricao_">Descrição:</label>
+        <input id="descricao_" type="text" name="descricao">
+    </span>
+    <button class="display-block">Adicionar</button>
+    <a href="{{url_for('tarefas_func')}}" class="display-block">CANCELAR</a>
+</form>
+{% endblock %}

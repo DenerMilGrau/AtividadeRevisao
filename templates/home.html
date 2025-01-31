@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de tarefas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de tarefas</h1>
+    </header>
+    <nav>
+        <a href="{{url_for('tarefas_func')}}">TAREFAS</a>
+    </nav>
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+
+        {%- for mens in get_flashed_messages()%}
+            <p>{{mens}}</p>
+        {%- endfor %}
+    </main>
+</body>
+</html>

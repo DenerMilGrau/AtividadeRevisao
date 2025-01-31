@@ -1,0 +1,53 @@
+{% extends 'home.html' %}
+
+{% block conteudo %}
+    <form action="{{url_for('editar_func', id=id)}}" class="pag" method="POST">
+    <span class="display-block">
+        <label for="nome_">Nome:</label>
+        <input id="nome_" type="text" name="nome" value="{{tarefa.nome}}">
+    </span>
+    <span class="display-block">
+        <label for="descricao_">Descrição:</label>
+        <input id="descricao_" type="text" name="descricao" value="{{tarefa.descricao}}">
+    </span>
+    <p>Status da tarefa:</p>
+        {% if tarefa.status == 1 %}
+            <input id="concluida" type="radio" name="status_tarefa" value="2" >
+            <label for="concluida">Concluída</label>
+            <input id="progresso" type="radio" name="status_tarefa" value="1" checked>
+            <label for="progresso">Em progresso</label>
+            <input id="pendente" type="radio" name="status_tarefa" value="0">
+            <label for="pendente">Pendente</label>
+        {% elif tarefa.status == 0 %}
+            <input id="concluida_" type="radio" name="status_tarefa" value="2" >
+            <label for="concluida_">Concluída</label>
+            <input id="progresso_" type="radio" name="status_tarefa" value="1" >
+            <label for="progresso_">Em progresso</label>
+            <input id="pendente_" type="radio" name="status_tarefa" value="0" checked>
+            <label for="pendente_">Pendente</label>
+        {% else %}
+            <input id="concluida__" type="radio" name="status_tarefa" value="2" checked>
+            <label for="concluida__">Concluída</label>
+            <input id="progresso__" type="radio" name="status_tarefa" value="1" >
+            <label for="progresso__">Em progresso</label>
+            <input id="pendente__" type="radio" name="status_tarefa" value="0" >
+            <label for="pendente__">Pendente</label>
+        {% endif %}
+    <button class="display-block">SALVAR</button>
+    <a href="{{url_for('tarefas_func')}}" class="display-block">CANCELAR</a>
+    <a href="{{url_for('deletar_func', id=id)}}" onclick="MyFunction()">DELETAR</a>
+    </form>
+    <p id="flash"></p>
+<script>
+function myFunction() {
+  let text = "Você tem certeza que quer deletar\nEssa alteração não pode ser desfeita";
+  if (confirm(text) == true) {
+    text = "Deletando...";
+  } else {
+    text = "Ação cancelada";
+  }
+  document.getElementById("flash").innerHTML = text;
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'home.html'%}
+
+{% block conteudo %}
+    <div class="pag">
+        <h1>detalhes tarefa #{{tarefa.id}}</h1>
+        <p>NOME: {{tarefa.nome}}</p>
+        <p>DESCRIÇÃO:{{tarefa.descricao}}</p>
+        {% if tarefa.status == 0 %}
+            <p>STATUS = Pendente</p>
+        {% elif tarefa.status == 1 %}
+            <p>STATUS = Em progresso</p>
+        {% else %}
+            <p>STATUS = Concluída</p>
+        {% endif %}
+        <a href=""></a>
+    </div>
+{% endblock %}

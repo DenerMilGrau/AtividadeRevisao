@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+
+{% block conteudo %}
+    <a class="display-block" href="{{url_for('cadastro_func')}}">CADASTRAR</a>
+    {% for i in tarefas %}
+        <div class="card">
+        <p>#{{i.id}}-{{i.nome}}</p>
+        {% if i.status == 0 %}
+            <p>status = Pendente</p>
+        {% elif i.status == 1 %}
+            <p>status = Em progresso</p>
+        {% else %}
+            <p>status = Concluída</p>
+        {% endif %}
+            <a href="{{url_for('editar_func', id=i.id)}}">EDITAR</a>
+            <a href="{{url_for('detalhes_func', id=i.id)}}">DETALHES</a>
+        </div>
+    {% endfor %}
+
+{% endblock %}

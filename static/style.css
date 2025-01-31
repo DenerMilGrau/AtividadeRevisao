@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    width: 100vw;
+    height: 15vh;
+    background-color: blue;
+    display: block;
+    line-height: 15vh;
+    text-align: center;
+}
+
+nav{
+    height: 85vh;
+    width: 15vw;
+    background-color: aqua;
+    display: inline-block;
+    text-align: center;
+}
+main{
+    height: 85vh;
+    width: 83.8vw;
+    background-color: gray;
+    float: right;
+}
+body{
+    background-color: gray;
+}
+nav a{
+    background-color: aliceblue;
+    padding: 6px;
+    text-decoration: none;
+    border-radius: 2px;
+    /*display: block;*/
+    text-align: center;
+    /*margin-top: 50px;*/
+    color: black;
+}
+.card{
+    background-color: azure;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+    width: 200px;
+    display: inline-block;
+}
+.pag{
+    background-color: aqua;
+    padding: 50px;
+    display: inline-block;
+    border-radius: 10px;
+}
+.display-block{
+    display: block;
+}
